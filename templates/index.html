@@ -1,0 +1,50 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- 채널 선택 -->
+        <div class="channel-selection">
+            <input id="channelInput" type="text" placeholder="(e.g., 마음띠00)" />
+            <button id="connectButton" onclick="connectToChannel()">Connect</button>
+        </div>
+
+        <!-- 채팅창 -->
+        <div id="chat-window" class="chat-window"></div>
+
+        <!-- 공지사항 (퀘스트 결과) -->
+        <div id="quest-container" class="quest-container hidden"></div>
+
+        <!-- 도움 선택지 -->
+        <div id="help-choices" class="help-choices hidden"></div>
+
+        <!-- 입력창 및 버튼 -->
+        
+        <div class="input-container">
+            <input id="messageInput" type="text" placeholder="Type a message..." />
+            <button id="sendButton" onclick="sendMessage()">Send</button>
+            <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="sendImage()" />
+            <button id="uploadButton" onclick="document.getElementById('imageInput').click()">📷</button>
+        </div>
+        <div class="button-container">
+            
+            <button id="helpButton" onclick="showHelp()">도움</button>
+            <button id="questButton" onclick="showQuest()">퀘스트</button>
+            <button id="toggleHelpButton" onclick="toggleHelp()">도움 창 토글</button>
+            <button id="toggleQuestButton" onclick="toggleQuest()">퀘스트 창 토글</button>
+            
+        </div>
+    </div>
+    <script src="/static/chat.js"></script>
+</body>
+</html>
+
